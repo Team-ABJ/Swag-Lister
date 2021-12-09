@@ -1,6 +1,6 @@
 USE adlister_db;
 
-DROP TABLE IF EXISTS ads;
+DROP TABLE IF EXISTS swag;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE IF NOT EXISTS users(
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS swag(
     title VARCHAR(240) NOT NULL,
     description TEXT NOT NULL,
     category TEXT NOT NULL,
+    price INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
 );
