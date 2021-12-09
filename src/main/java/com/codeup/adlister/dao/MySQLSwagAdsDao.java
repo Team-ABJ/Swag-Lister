@@ -39,7 +39,8 @@ public class MySQLSwagAdsDao implements SwagAds {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO swag(user_id, title, description) VALUES (?, ?, ?)";
+            //Add constructor for price
+            String insertQuery = "INSERT INTO swag(user_id, title, description, price) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
@@ -58,8 +59,8 @@ public class MySQLSwagAdsDao implements SwagAds {
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
-            rs.getString("description")
-        );
+            rs.getString("description"),
+                rs.getString("price"));
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
