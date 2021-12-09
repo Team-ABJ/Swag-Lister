@@ -14,9 +14,9 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-           <a href="singleSwagAd"> <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-               <p>$${ad.price}</p></a>
+            <a href="singleSwagAd"> <h2>${ad.title}</h2></a>
+                <p>${ad.description}</p>
+               <p>$${ad.price}</p>
         </div>
     </c:forEach>
 </div>
