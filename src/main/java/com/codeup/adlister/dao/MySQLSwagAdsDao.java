@@ -54,6 +54,16 @@ public class MySQLSwagAdsDao implements SwagAds {
         }
     }
 
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public void destroy(Ad ad) {
+
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),

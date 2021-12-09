@@ -27,6 +27,16 @@ public class ListSwagAdsDao implements SwagAds {
         return ad.getId();
     }
 
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public void destroy(Ad ad) {
+
+    }
+
 //    private List<Ad> generateAds() {
 //        List<Ad> ads = new ArrayList<>();
 //        ads.add(new Ad(
