@@ -3,6 +3,7 @@ package com.codeup.adlister.controllers;
 
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet (name = "controllers.SingleSwagAdServlet", urlPatterns = "/singleSwagAds")
-public class SingleSwagAdServlet {
+@WebServlet (name = "controllers.SingleSwagAdServlet", urlPatterns = "/singleSwagAd")
+public class SingleSwagAdServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        request.getRequestDispatcher("/WEB-INF/ads/singleSwagAd.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/singleSwagAdPage.jsp").forward(request, response);
     }
+
 }
 
 
