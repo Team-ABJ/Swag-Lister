@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.Config;
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -47,15 +48,12 @@ public class MySQLUsersDao implements Users {
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
 
-
-
             return rs.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
-
-
     }
+
 
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
@@ -68,5 +66,19 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
+
+//    public User allUserAds(User user) throws SQLException {
+//       String findAds = "SELECT * FROM swag WHERE user_id = ?";
+//        PreparedStatement stmt = connection.prepareStatement(findAds);
+//
+//        stmt.setLong(1, user.getId());
+//
+//        ResultSet rs = stmt.executeQuery();
+//        return new Ad(
+//            rs.getString("title"),
+//            rs.getString("description"),
+//            rs.getString("price")
+//        );
+//    }
 
 }

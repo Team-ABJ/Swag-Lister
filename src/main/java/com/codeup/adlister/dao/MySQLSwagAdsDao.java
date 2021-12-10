@@ -45,6 +45,7 @@ public class MySQLSwagAdsDao implements SwagAds {
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
+            stmt.setString(4, ad.getPrice());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -52,6 +53,31 @@ public class MySQLSwagAdsDao implements SwagAds {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    public List<Ad> searchAdsFromResult(String searchInput){
+        try{
+            String query = "SELECT * FROM swag WHERE title LIKE ? or description LIKE ?";
+            String searchQuery = "%" + searchInput + "%";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, searchQuery);
+            stmt.setString(2, searchQuery);
+
+            ResultSet rs = stmt.executeQuery();
+            return createAdFromResult(rs);
+
+        } catch (SQLException throwables) {
+            throw new RuntimeException("No ads were available to display");
+        }
+    }
+
+    private List<Ad> createAdFromResult(ResultSet rs) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+
+        while(rs.next()){
+            ads.add(extractAd(rs));
+        }
+        return ads;
     }
 
     @Override
@@ -62,6 +88,17 @@ public class MySQLSwagAdsDao implements SwagAds {
     @Override
     public void destroy(Ad ad) {
 
+    }
+    public List<Ad> searchAdsByUser(long id) throws SQLException {
+        PreparedStatement stmt = null;
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM swag WHERE user_id = ?");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdFromResult(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Cannot find ad by id", e);
+        }
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
