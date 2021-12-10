@@ -37,6 +37,10 @@ public class ListSwagAdsDao implements SwagAds {
 
     }
 
+
+
+
+
 //    private List<Ad> generateAds() {
 //        List<Ad> ads = new ArrayList<>();
 //        ads.add(new Ad(

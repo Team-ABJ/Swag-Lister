@@ -40,11 +40,13 @@ public class MySQLSwagAdsDao implements SwagAds {
     public Long insert(Ad ad) {
         try {
             //Add constructor for price
-            String insertQuery = "INSERT INTO swag(user_id, title, description, price) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO swag(user_id, title, description, category, price) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
+            stmt.setString(4, ad.getCategory());
+            stmt.setString(5, ad.getPrice());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -64,13 +66,15 @@ public class MySQLSwagAdsDao implements SwagAds {
 
     }
 
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description"),
-                rs.getString("price"));
+            rs.getString("category"),
+            rs.getString("price"));
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
