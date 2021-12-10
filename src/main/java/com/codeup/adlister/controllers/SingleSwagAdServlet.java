@@ -16,8 +16,12 @@ import java.io.IOException;
 @WebServlet (name = "controllers.SingleSwagAdServlet", urlPatterns = "/singleSwagAd")
 public class SingleSwagAdServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+
+        Long adId = Long.valueOf(request.getParameter("id"));
+
+        request.setAttribute("ads", DaoFactory.getAdsDao().findSwagAd(adId));
         request.getRequestDispatcher("/WEB-INF/singleSwagAdPage.jsp").forward(request, response);
+
     }
 
 }
