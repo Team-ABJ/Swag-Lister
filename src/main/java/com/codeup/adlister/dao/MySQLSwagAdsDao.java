@@ -40,12 +40,13 @@ public class MySQLSwagAdsDao implements SwagAds {
     public Long insert(Ad ad) {
         try {
             //Add constructor for price
-            String insertQuery = "INSERT INTO swag(user_id, title, description, price) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO swag(user_id, title, description, category, price) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
-            stmt.setString(4, ad.getPrice());
+            stmt.setString(4, ad.getCategory());
+            stmt.setString(5, ad.getPrice());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -95,11 +96,13 @@ public class MySQLSwagAdsDao implements SwagAds {
             stmt = connection.prepareStatement("SELECT * FROM swag WHERE user_id = ?");
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
+            System.out.println(rs);
             return createAdFromResult(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Cannot find ad by id", e);
         }
     }
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
@@ -107,7 +110,8 @@ public class MySQLSwagAdsDao implements SwagAds {
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description"),
-                rs.getString("price"));
+            rs.getString("category"),
+            rs.getString("price"));
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
@@ -116,5 +120,16 @@ public class MySQLSwagAdsDao implements SwagAds {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        Config config = new Config();
+        MySQLSwagAdsDao testDao = new MySQLSwagAdsDao(config);
+        for(Ad ad : testDao.searchAdsByUser(3)){
+            System.out.println("ad.getTitle() = " + ad.getTitle());
+            System.out.println("ad.getDescription() = " + ad.getDescription());
+        }
+        System.out.println(testDao.searchAdsByUser(3));
+
     }
 }
