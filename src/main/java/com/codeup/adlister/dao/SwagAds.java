@@ -15,4 +15,5 @@ public interface SwagAds {
     void destroy(Ad ad);    // remove a record
 
 
+
 }
