@@ -7,4 +7,3 @@
         <a href="#" class="btn btn-primary">Throw It In The Bag</a>
     </div>
 </div>
-
