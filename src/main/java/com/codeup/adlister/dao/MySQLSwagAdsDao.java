@@ -90,6 +90,24 @@ public class MySQLSwagAdsDao implements SwagAds {
     public void destroy(Ad ad) {
 
     }
+
+    @Override
+    public Ad findSwagAd(Long id) {
+        System.out.println(id);
+        PreparedStatement stmt = null;
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM swag WHERE id= ?");
+            stmt.setLong(1,id);
+             ResultSet rs = stmt.executeQuery();
+             rs.next();
+             return extractAd(rs);
+        }      catch (SQLException e){
+//
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<Ad> searchAdsByUser(long id) throws SQLException {
         PreparedStatement stmt = null;
         try{
