@@ -20,16 +20,11 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
-    <h1>Here Are is your ad!</h1>
+<%--<div class="container">--%>
+<%--    <div class="col-md-6">--%>
 
-
-        <div class="col-md-6">
-            <h2>Your ad that you clicked on</h2>
 <jsp:include page="/WEB-INF/partials/singleSwagAd.jsp"/>
-        </div>
 
-</div>
 
 </body>
 </html>
