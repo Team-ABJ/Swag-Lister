@@ -14,10 +14,10 @@
 <%--Needs /?id= --%>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <a href="singleSwagAd"> <h2>${ad.title}</h2></a>
+            <a href="singleSwagAd?id=${ad.id}" method="GET"> <h2>${ad.title}</h2></a>
                 <p>${ad.description}</p>
                <p>$${ad.price}</p>
-            <p>${ad.id}</p>
+<%--            <p>${ad.id}</p>--%>
         </div>
     </c:forEach>
 </div>
