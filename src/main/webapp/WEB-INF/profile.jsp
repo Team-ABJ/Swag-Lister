@@ -16,7 +16,7 @@
     </div>
     <c:forEach var="swag" items="${swag}">
         <div class="col-md-6">
-            <a href="singleSwagAd"> <h2>${swag.title}</h2></a>
+            <a href="singleSwagAd?id=${swag.id}"> <h2>${swag.title}</h2></a>
             <p>${swag.description}</p>
             <p>${swag.price}</p>
             <a href="/ads/delete/${swag.id}" class="btn btn-primary">Delete</a>
