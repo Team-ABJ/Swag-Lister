@@ -20,7 +20,7 @@ public class DeleteAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
-            long adId = Long.parseLong(request.getParameter("adId"));
+            long id = Long.parseLong(request.getParameter("id"));
             request.setAttribute("deleted", true);
 
             request.getRequestDispatcher("/WEB-INF/ads/delete.jsp").forward(request, response);

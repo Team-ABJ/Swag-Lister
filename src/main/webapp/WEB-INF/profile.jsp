@@ -14,25 +14,13 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
-<%--    <div class="container">--%>
-<%--        <h1>Create a new Ad</h1>--%>
-<%--        <form action="/ads/create" method="post">--%>
-<%--            <div class="form-group">--%>
-<%--                <label for="title">Title</label>--%>
-<%--                <input id="title" name="title" class="form-control" type="text">--%>
-<%--            </div>--%>
-<%--            <div class="form-group">--%>
-<%--                <label for="description">Description</label>--%>
-<%--                <textarea id="description" name="description" class="form-control" type="text"></textarea>--%>
-<%--            </div>--%>
-<%--            <input type="submit" class="btn btn-block btn-primary">--%>
-<%--        </form>--%>
-<%--    </div>--%>
     <c:forEach var="ad" items="${swag}">
         <div class="col-md-6">
             <a href="singleSwagAd"> <h2>${ad.title}</h2></a>
             <p>${ad.description}</p>
-            <p>$${ad.price}</p>
+            <p>${ad.price}</p>
+            <a href="#" class="btn btn-primary">Delete</a>
+            <a href="#" class="btn btn-primary">Edit</a>
         </div>
     </c:forEach>
 </body>
