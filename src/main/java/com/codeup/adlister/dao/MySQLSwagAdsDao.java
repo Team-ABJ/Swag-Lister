@@ -56,7 +56,8 @@ public class MySQLSwagAdsDao implements SwagAds {
         }
     }
 
-    public List<Ad> searchAdsFromResult(String searchInput){
+
+    public List<Ad> searchAdsFromResult(String searchInput) throws SQLException{
         try{
             String query = "SELECT * FROM swag WHERE title LIKE ? or description LIKE ?";
             String searchQuery = "%" + searchInput + "%";
@@ -65,10 +66,11 @@ public class MySQLSwagAdsDao implements SwagAds {
             stmt.setString(2, searchQuery);
 
             ResultSet rs = stmt.executeQuery();
+            rs.next();
             return createAdFromResult(rs);
 
-        } catch (SQLException throwables) {
-            throw new RuntimeException("No ads were available to display");
+        } catch (SQLException e) {
+            throw new RuntimeException("No ads were available to display", e);
         }
     }
 

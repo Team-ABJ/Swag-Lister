@@ -21,7 +21,7 @@
                 <p class="card-text">${ads.description}</p>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Buy so you can throw it in the bag
+                    Buy Now
                 </button>
 
                 <!-- Modal -->

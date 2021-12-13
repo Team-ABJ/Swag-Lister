@@ -25,19 +25,7 @@ public class SingleSwagAdServlet extends HttpServlet{
 }
 
 
-//    if (request.getSession().getAttribute("user") == null) {
-//        response.sendRedirect("/profile");
-//        return;
-//    }
-//    User user = (User) request.getSession().getAttribute("user");
-//        System.out.println(user.getId());
-//        try {
-//        request.setAttribute("swag", DaoFactory.getAdsDao().searchAdsByUser(user.getId()));
-//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
-//    } catch (
-//    SQLException e) {
-//        e.printStackTrace();
-//    }
+
 
 
 
