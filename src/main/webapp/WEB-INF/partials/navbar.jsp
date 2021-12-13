@@ -3,9 +3,9 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Swaglister</a>
-            <form class="form-inline my-4 my-lg-4">
-                <input class="form-control mr-sm-4" type="search" placeholder="Search for some swag" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form action="/searchAdsResults" method="GET" class="form-inline my-4 my-lg-4">
+                <input class="form-control mr-sm-4" type="text" placeholder="Search for some swag" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
