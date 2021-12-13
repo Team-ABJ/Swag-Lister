@@ -18,7 +18,7 @@
 
                 <c:choose>
                     <c:when test="${validAttempt}">
-                        <p>your logged in</p>
+                        <button type="button" class="btn btn-success"> Buy Now</button>
 <%--                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">--%>
 <%--                            Buy Now--%>
 <%--                        </button>--%>
