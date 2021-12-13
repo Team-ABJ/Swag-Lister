@@ -1,13 +1,6 @@
-<%--<div class="card" style="width: 18rem;">--%>
-<%--    <img src="..." class="card-img-top" alt="...">--%>
-<%--    <div class="card-body">--%>
-<%--        <h5 class="card-title">${ad.title}Test Title</h5>--%>
-<%--        <p class="card-text">${ad.description}TEST description</p>--%>
-<%--        <div class="card-footer">$${ad.price}TESt Test</div>--%>
-<%--        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--%>
-<%--        <a href="#" class="btn btn-primary">Throw It In The Bag</a>--%>
-<%--    </div>--%>
-<%--</div>--%>
+<%@ page import="com.codeup.adlister.models.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <div class="card mb-6" style="max-width: 640px;">
     <div class="row no-gutters">
@@ -20,9 +13,23 @@
                 <h3 class="card-title">$${ads.price}</h3>
                 <p class="card-text">${ads.description}</p>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Buy Now
-                </button>
+
+<%--                <% User user = (User) request.getSession().getAttribute("user");%>--%>
+
+                <c:choose>
+                    <c:when test="${validAttempt}">
+                        <p>your logged in</p>
+<%--                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">--%>
+<%--                            Buy Now--%>
+<%--                        </button>--%>
+                    </c:when>
+                    <c:otherwise>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Buy Now
+                        </button>
+<%--                        <p>logg in </p>--%>
+                    </c:otherwise>
+                </c:choose>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -100,6 +107,8 @@
 
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
+<%--                </c:otherwise>--%>
+<%--                </c:choose>--%>
             </div>
         </div>
     </div>
