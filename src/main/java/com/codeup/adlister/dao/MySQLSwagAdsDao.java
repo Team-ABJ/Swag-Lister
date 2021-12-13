@@ -83,14 +83,39 @@ public class MySQLSwagAdsDao implements SwagAds {
         return ads;
     }
 
-    @Override
-    public void update(Ad ad) {
 
+
+    public void update(Ad ad){
+
+
+        try{
+            String updateQuery = "UPDATE swag SET user_id = ?, title = ?, description = ?, category = ?, price = ? WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(updateQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ad.getUserId());
+            stmt.setString(2, ad.getTitle());
+            stmt.setString(3, ad.getDescription());
+            stmt.setString(4, ad.getCategory());
+            stmt.setString(5, ad.getPrice());
+            stmt.setLong(6, ad.getId());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) {
+                System.out.println("Inserted a new record! New id: " + rs.getLong(1));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error editing ad", e);
+        }
     }
+
+    @Override
+    public long update(int parseInt) {
+        return 0;
+    }
+
 
     public void destroy(int id) {
         try {
-            //Add constructor for price
             String destroyQuery = "DELETE FROM swag WHERE id=?";
             PreparedStatement stmt = connection.prepareStatement(destroyQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, id);
@@ -116,6 +141,10 @@ public class MySQLSwagAdsDao implements SwagAds {
         }
         return null;
     }
+
+
+
+
 
     public List<Ad> searchAdsByUser(long id) throws SQLException {
         PreparedStatement stmt = null;

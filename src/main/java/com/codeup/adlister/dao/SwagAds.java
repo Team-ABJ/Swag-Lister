@@ -15,10 +15,12 @@ public interface SwagAds {
 
     List<Ad> searchAdsFromResult(String searchInput) throws SQLException;
 
-    void update(Ad ad);     // update an existing record
-
     void destroy(int id);    // remove a record
 
     Ad findSwagAd(Long id);
 
+
+    void update(Ad ad);
+
+    long update(int parseInt);
 }

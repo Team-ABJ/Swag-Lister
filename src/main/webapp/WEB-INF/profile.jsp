@@ -20,7 +20,7 @@
             <p>${swag.description}</p>
             <p>${swag.price}</p>
             <a href="/ads/delete/${swag.id}" class="btn btn-primary">Delete</a>
-            <a href="/ads/edit" class="btn btn-primary">Edit</a>
+            <a href="/ads/edit/${swag.id}" class="btn btn-primary">Edit</a>
         </div>
     </c:forEach>
     <a class="btn btn-primary" href="EditProfile?id=${sessionScope.user.id}" method="GET" role="button" value="${sessionScope.user.id}">Edit Profile</a>
