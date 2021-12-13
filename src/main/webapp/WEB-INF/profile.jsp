@@ -14,7 +14,6 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
-
     <c:forEach var="swag" items="${swag}">
         <div class="col-md-6">
             <a href="singleSwagAd"> <h2>${swag.title}</h2></a>
