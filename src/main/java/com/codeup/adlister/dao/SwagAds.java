@@ -17,7 +17,7 @@ public interface SwagAds {
 
     void update(Ad ad);     // update an existing record
 
-    void destroy(Ad ad);    // remove a record
+    void destroy(int id);    // remove a record
 
     Ad findSwagAd(Long id);
 

@@ -88,9 +88,16 @@ public class MySQLSwagAdsDao implements SwagAds {
 
     }
 
-    @Override
-    public void destroy(Ad ad) {
-
+    public void destroy(int id) {
+        try {
+            //Add constructor for price
+            String destroyQuery = "DELETE FROM swag WHERE id=?";
+            PreparedStatement stmt = connection.prepareStatement(destroyQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting an Ad", e);
+        }
     }
 
     @Override

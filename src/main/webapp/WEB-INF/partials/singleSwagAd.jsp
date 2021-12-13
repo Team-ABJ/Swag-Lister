@@ -1,12 +1,3 @@
-
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${ad.title}Test Title</h5>
-        <p class="card-text">${ad.description}TEST description</p>
-        <div class="card-footer">$${ad.price}TESt Test</div>
-        <a href="#" class="btn btn-primary">Throw It In The Bag</a>
-
 <%--<div class="card" style="width: 18rem;">--%>
 <%--    <img src="..." class="card-img-top" alt="...">--%>
 <%--    <div class="card-body">--%>
@@ -45,23 +36,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <%--                            <form class="needs-validation" novalidate>--%>
-                            <%--                                <div class="form-row">--%>
-                            <%--                                    <div class="col-md-6 mb-3">--%>
-                            <%--                                        <label for="validationCustom01">First name</label>--%>
-                            <%--                                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>--%>
-                            <%--                                        <div class="valid-feedback">--%>
-                            <%--                                            Looks good!--%>
-                            <%--                                        </div>--%>
-                            <%--                                    </div>--%>
-                            <%--                            <form class="needs-validation" novalidate>--%>
-                            <%--                                <div class="form-row">--%>
-                            <%--                                    <div class="col-md-6 mb-3">--%>
-                            <%--                                        <label for="validationTooltip01">First name</label>--%>
-                            <%--                                        <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>--%>
-                            <%--                                        <div class="valid-tooltip">--%>
-                            <%--                                            Looks good!--%>
-                            <%--                                        </div>--%>
+
                             <div class="modal-body">
                                 <div class="container">
                                     <h1>Please Log In</h1>
@@ -110,7 +85,6 @@
                                         <input type="submit" class="btn btn-primary btn-block">
                                     </form>
                                 </div>
-                                </body>
                                 <div class="modal-footer">
                                     <%--                                <button type="button" class="btn btn-primary">Register</button>--%>
                                     <%--                                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">--%>
