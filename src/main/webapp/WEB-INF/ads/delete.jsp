@@ -15,10 +15,10 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<h1 style="color: red;">Delete Ads</h1>
-<form action="/ads/delete" method="post">
+<h1 style="color: red;">Your ad has been deleted!</h1>
+<%--<form action="/ads/delete" method="POST">--%>
 
     <a href="/profile">Go back to profile</a>
-    <form>
+<%--    <form>--%>
 </body>
 </html>
