@@ -15,13 +15,13 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
-    <c:forEach var="ad" items="${swag}">
+    <c:forEach var="swag" items="${swag}">
         <div class="col-md-6">
-            <a href="singleSwagAd"> <h2>${ad.title}</h2></a>
-            <p>${ad.description}</p>
-            <p>${ad.price}</p>
-            <a href="#" class="btn btn-primary">Delete</a>
-            <a href="#" class="btn btn-primary">Edit</a>
+            <a href="singleSwagAd"> <h2>${swag.title}</h2></a>
+            <p>${swag.description}</p>
+            <p>${swag.price}</p>
+            <a href="/ads/delete/${swag.id}" class="btn btn-primary">Delete</a>
+            <a href="/ads/edit" class="btn btn-primary">Edit</a>
         </div>
     </c:forEach>
 </body>
