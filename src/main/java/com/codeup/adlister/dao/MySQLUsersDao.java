@@ -67,6 +67,39 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    public User findUser(long id) {
+        System.out.println(id);
+        PreparedStatement stmt = null;
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM users WHERE id= ?");
+            stmt.setLong(1,id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractUser(rs);
+        }      catch (SQLException e){
+//
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void updateUser(User user){
+        String update = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getPassword());
+            stmt.setLong(4, user.getId());
+            stmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating user", e);
+        }
+
+    }
+
 
 
 }
