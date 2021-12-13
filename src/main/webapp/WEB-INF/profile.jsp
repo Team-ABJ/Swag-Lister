@@ -23,5 +23,6 @@
             <a href="/ads/edit" class="btn btn-primary">Edit</a>
         </div>
     </c:forEach>
+    <a class="btn btn-primary" href="EditProfile?id=${sessionScope.user.id}" method="GET" role="button" value="${sessionScope.user.id}">Edit Profile</a>
 </body>
 </html>
