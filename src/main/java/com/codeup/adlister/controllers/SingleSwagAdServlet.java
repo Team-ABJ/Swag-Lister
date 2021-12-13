@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 
 @WebServlet(name = "controllers.SingleSwagAdServlet", urlPatterns = "/singleSwagAd")
-public class SingleSwagAdServlet extends HttpServlet{
+public class SingleSwagAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long adId = Long.valueOf(request.getParameter("id"));
         System.out.println(adId);
@@ -23,6 +23,7 @@ public class SingleSwagAdServlet extends HttpServlet{
         request.getRequestDispatcher("/WEB-INF/singleSwagAdPage.jsp").forward(request, response);
     }
 }
+
 
 
 

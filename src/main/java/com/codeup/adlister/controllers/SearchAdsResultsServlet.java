@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.jar.Attributes;
 
 
@@ -28,32 +29,34 @@ import java.util.jar.Attributes;
 
 public class SearchAdsResultsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
+        List<Ad> ads = (List<Ad>) request.getSession().getAttribute("ads");
+        request.setAttribute("ads", ads);
         request.getRequestDispatcher("/WEB-INF/searchAdsResults.jsp").forward(request,response);
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        String userSearch = request.getParameter("searchInput");
 
-        String userSearch = request.getParameter("userInput");
-
+        System.out.println(userSearch);
         try {
-            request.setAttribute("ads",DaoFactory.getAdsDao().searchAdsFromResult(userSearch));
-            System.out.println(userSearch);
-
+            List<Ad> ads = DaoFactory.getAdsDao().searchAdsFromResult(userSearch);
+            request.getSession().setAttribute("ads", ads);
+            System.out.println(ads);
+            response.sendRedirect("/searchAdsResults");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+//        try {
+//            request.setAttribute("ads",DaoFactory.getAdsDao().searchAdsFromResult(userSearch));
+//            System.out.println(userSearch);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
 
-
-
-//        DaoFactory.getAdsDao().searchAdsFromResult();
-        response.sendRedirect("/singleSwagAd");
     }
 }
