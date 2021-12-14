@@ -20,13 +20,22 @@ public class EditAdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getPathInfo().substring(1);
-//        DaoFactory.getAdsDao().update(parseInt(id));
 
-        System.out.println(id);
+        Long AdId = Long.valueOf(id);
+        System.out.println(AdId);
+
+        request.setAttribute("ads", DaoFactory.getAdsDao().findSwagAd(AdId));
         request.setAttribute("swagId", id);
         request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
 
     }
+//        DaoFactory.getAdsDao().update(parseInt(id));
+//
+//        System.out.println(id);
+//        request.setAttribute("swagId", id);
+//        request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
+//
+//    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,3 +54,4 @@ public class EditAdServlet extends HttpServlet {
 
     }
 }
+

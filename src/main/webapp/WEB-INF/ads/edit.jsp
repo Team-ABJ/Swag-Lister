@@ -46,22 +46,22 @@
 <%--</div>--%>
 <div class="container col-7">
     <h1>Edit Swag</h1>
-    <form action="/ads/edit" method="post">
+    <form action="/ads/edit/?id=${ads.id}" method="post">
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <textarea id="title" name="title" class="form-control" type="text">${ads.title}</textarea>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            <textarea id="description" name="description" class="form-control" type="text">${ads.description}</textarea>
         </div>
         <div class="form-group">
             <label for="category">Category</label>
-            <textarea id="category" name="category" class="form-control" type="text"></textarea>
+            <textarea id="category" name="category" class="form-control" type="text">${ads.category}</textarea>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <textarea id="price" name="price" class="form-control" type="text"></textarea>
+            <textarea id="price" name="price" class="form-control" type="text">${ads.price}</textarea>
         </div>
         <input type="hidden" value="${swagId}" name="swagId">
         <input type="submit" class="btn btn-block btn-primary">
