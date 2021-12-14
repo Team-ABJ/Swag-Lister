@@ -5,7 +5,7 @@
 <div class="card mb-6" style="max-width: 640px;">
     <div class="row no-gutters">
         <div class="col-md-4">
-            <img src="..." alt="...">
+            <img src="..">
         </div>
         <div class="col-md-8">
             <h1>${ads.title}</h1>
