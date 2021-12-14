@@ -5,20 +5,23 @@
         <jsp:param name="title" value="Edit your Ad"/>
     </jsp:include>
     <style>
-        body{
+        body {
             background-image: url("../../img/Edit_fashion.gif");
             color: #2d88da;
         }
-        h1{
+
+        h1 {
             margin-left: 250px;
             color: #023e8a;
         }
-        .container{
+
+        .container {
             /*height: 160px;*/
             margin-left: 15px;
             margin-top: 8em;
         }
-        label{
+
+        label {
             font-size: x-large;
             font-weight: bolder;
         }
@@ -57,7 +60,13 @@
         </div>
         <div class="form-group">
             <label for="category">Category</label>
-            <textarea id="category" name="category" class="form-control" type="text">${ads.category}</textarea>
+            <select id="category" name="category" class="form-control" type="text">
+                    <option disabled selected>Please Choose One:</option>
+                    <option>accessories</option>
+                    <option>shoes</option>
+                    <option>shirts</option>
+                    <option>pants</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
@@ -65,6 +74,8 @@
         </div>
         <input type="hidden" value="${swagId}" name="swagId">
         <input type="submit" class="btn btn-block btn-primary">
+        <a href="/profile" type="rest" class="btn btn-block btn-primary btn-danger">Cancel</a>
+
     </form>
 </div>
 

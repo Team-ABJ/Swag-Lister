@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
 //        String redirect = request.getParameter("redirect");
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
-        if (user == null) {
-            response.sendRedirect("/register");
+        if (user == null || password == null) {
+            response.sendRedirect("/profile");
             return;
         }
 

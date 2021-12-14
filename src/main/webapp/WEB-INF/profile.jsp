@@ -19,9 +19,12 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <a class="btn btn-primary" href="EditProfile?id=${sessionScope.user.id}" method="GET" role="button" value="${sessionScope.user.id}">Edit Profile</a>
+
     </div>
     <c:forEach var="swag" items="${swag}">
         <div class="col-md-6">
+            <br>
             <a href="singleSwagAd?id=${swag.id}"> <h2>${swag.title}</h2></a>
             <p>${swag.description}</p>
             <p>$${swag.price}</p>
@@ -30,6 +33,5 @@
         </div>
     </c:forEach>
     <br>
-    <a class="btn btn-primary" href="EditProfile?id=${sessionScope.user.id}" method="GET" role="button" value="${sessionScope.user.id}">Edit Profile</a>
 </body>
 </html>
