@@ -12,30 +12,22 @@
             <div class="card-body">
                 <h3 class="card-title">$${ads.price}</h3>
                 <p class="card-text">${ads.description}</p>
-                <!-- Button trigger modal -->
-
-<%--                <% User user = (User) request.getSession().getAttribute("user");%>--%>
-
                 <c:choose>
                     <c:when test="${validAttempt}">
                         <button type="button" class="btn btn-success"> Buy Now</button>
-<%--                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">--%>
-<%--                            Buy Now--%>
-<%--                        </button>--%>
                     </c:when>
                     <c:otherwise>
+                        <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Buy Now
                         </button>
-<%--                        <p>logg in </p>--%>
+
                     </c:otherwise>
                 </c:choose>
-
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <%--                    <div class="modal-dialog">--%>
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">List be Swagging</h5>
@@ -47,31 +39,37 @@
                             <div class="modal-body">
                                 <div class="container">
                                     <h1>Please Log In</h1>
+<%--                                    Log In Form --%>
+
                                     <form class="needs-validation" action="/login" method="POST" novalidate>
                                         <div class="form-group">
-                                            <%--                                            <div class="form-check">--%>
-                                            <input id="validationTooltipUsername" value="Mark" name="username"
+                                            <input id="validationTooltipUsername"  name="username"
                                                    class="form-control"
                                                    type="text" placeholder="username" required>
                                             <div class="valid-tooltip">
                                                 Get your swag on!
                                             </div>
                                         </div>
-                                        <%--                                        </div>--%>
+                                        <%--           <a href="singleSwagAd?id=${ad.id}">                              </div>--%>
                                         <div class="form-group">
+
                                             <input id="password" name="password" class="form-control" type="password"
                                                    placeholder="password">
                                             <small id="emailHelp" class="form-text text-muted">Do not share your
                                                 password with anyone</small>
 
                                         </div>
-                                        <input type="submit" class="btn btn-success btn-block" value="Log In" required>
+                                        <div>
+                                            <a href="singleSwagAd?id=${ad.id}">
+                                                <input type="submit" class="btn btn-success btn-block" value="Log In" required></a>
+                                        </div>
                                     </form>
                                 </div>
                                 <%--                            </div>--%>
                                 <div class="container">
                                     <h1>Please fill in your information.</h1>
                                     <form action="/register" method="post">
+<%--                                       Register form--%>
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input id="username" name="username" class="form-control" type="text">

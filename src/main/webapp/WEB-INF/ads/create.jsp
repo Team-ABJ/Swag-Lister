@@ -21,14 +21,21 @@
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
         <div class="form-group">
-            <label for="category">Category</label>
-            <textarea id="category" name="category" class="form-control" type="text"></textarea>
+            <label for="categoryFormControlSelect">Category</label>
+            <select id="categoryFormControlSelect" name="category" class="form-control">
+                <option>Accessories</option>
+                <option>Shoes</option>
+                <option>Shirts</option>
+                <option>Pants</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
             <textarea id="price" name="price" class="form-control" type="text"></textarea>
         </div>
-        <input type="submit" class="btn btn-block btn-primary">
+        <input type="submit" class="btn btn-lg btn-primary">
+        <a href="/profile" type="rest" class="btn btn-lg btn-danger">Cancel</a>
+
     </form>
 </div>
 
