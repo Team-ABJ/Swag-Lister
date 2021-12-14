@@ -6,9 +6,17 @@
     </jsp:include>
     <style>
         body{
-            background-image: url("../img/1.jpg");
+            background-image: url("../img/High_fashion2.gif");
             /*background-size: cover;*/
-            color: orangered;
+            /*height: 1800px;*/
+            /*width: 2000px;*/
+            color: #023e8a;
+        }
+        .container{
+            height: 50px;
+        }
+        h1{
+            padding-top: 15px;
         }
     </style>
 </head>

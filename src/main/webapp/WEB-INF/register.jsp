@@ -4,6 +4,14 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
+    <style>
+        body{
+            background-image: url("../img/7.jpg");
+            background-size: cover;
+            color: white;
+
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />

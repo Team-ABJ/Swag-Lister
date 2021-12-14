@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container col-5">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
         <form action="/EditProfile?id=${sessionScope.user.id}" method="post">
 <%--            <input type="hidden" value="${sessionScope.user.id}" name="id">--%>
