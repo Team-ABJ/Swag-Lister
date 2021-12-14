@@ -4,6 +4,25 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Edit your Ad"/>
     </jsp:include>
+    <style>
+        body{
+            background-image: url("../../img/Edit_fashion.gif");
+            color: #2d88da;
+        }
+        h1{
+            margin-left: 250px;
+            color: #023e8a;
+        }
+        .container{
+            /*height: 160px;*/
+            margin-left: 15px;
+            margin-top: 8em;
+        }
+        label{
+            font-size: x-large;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -25,8 +44,8 @@
 <%--    </form>--%>
 
 <%--</div>--%>
-<div class="container">
-    <h1>Edit Ad</h1>
+<div class="container col-7">
+    <h1>Edit Swag</h1>
     <form action="/ads/edit" method="post">
         <div class="form-group">
             <label for="title">Title</label>

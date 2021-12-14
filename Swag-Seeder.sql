@@ -10,7 +10,7 @@ VALUES ('JoseHustle', 'josehustle2@yahoo.com', 'josehustlehard'),
        ('BigAl', 'bigal12@yahoo.com', 'biggestofals'),
        ('RailsOfRuby', 'railingruby@yahoo.com', 'rockingruby');
 
-INSERT INTO swag (user_id, title, description, category, price)
+INSERT INTO swag (user_id, title, description, category, price, image_path)
 VALUES ('5', 'Gucci flip flops', 'Brand new Gucci flip flops that have only been worn outside once', 'shoes', '120'),
        ('5', 'Jordan 11s', 'Like new Jordans with not a mark on them, size 11', 'shoes', '150'),
        ('5', 'Balenciaga hoodie', 'Never before worn grey Balenciaga hoodie', 'shirts', '350'),
@@ -25,3 +25,5 @@ VALUES ('5', 'Gucci flip flops', 'Brand new Gucci flip flops that have only been
        ('4', 'Hyperglam Crop Zip Tee', 'Cheetah print crop top, good condition', 'shirts', '40'),
        ('4', 'Adidas Fleece Sweatshirt', 'Pink fleece adidas sweatshirt in new condition', 'shirts', '45');
 
+ALTER TABLE swag
+    ADD COLUMN `image_path` varchar(1024)

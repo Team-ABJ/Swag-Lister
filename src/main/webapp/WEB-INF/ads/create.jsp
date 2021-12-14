@@ -5,12 +5,19 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Create a new Ad"/>
     </jsp:include>
-
+    <style>
+        body{
+            background-image: url("../../img/Create_3.gif");
+            color: white;
+            background-size: inherit;
+            background-position: unset;
+        }
+    </style>
 </head>
-<body class="image">
+<body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <h1>Create an Ad</h1>
+<div class="container col-6">
+<%--    <h1>Create an Ad</h1>--%>
     <form action="/ads/create" method="post">
         <div class="form-group">
             <label for="title">Title</label>
