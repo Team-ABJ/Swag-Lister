@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import static java.lang.Integer.parseInt;
 public class DeleteAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
         String id = request.getPathInfo().substring(1);
         DaoFactory.getAdsDao().destroy(parseInt(id));
 

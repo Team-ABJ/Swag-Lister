@@ -14,6 +14,7 @@ import java.io.IOException;
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;

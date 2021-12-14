@@ -36,7 +36,7 @@
                                         tumble it to your crib.
                                     </div>
                                     <div class="modal-footer">
-                                        <a class="btn btn-primary" type="button" href="/ads" role="button" data-dismiss="modal">
+                                        <a class="btn btn-primary" type="button" role="button" data-dismiss="modal" href="/ads">
                                                  Continue to Swag Surf
                                         </a>
                                     </div>

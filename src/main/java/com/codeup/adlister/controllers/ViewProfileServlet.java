@@ -15,6 +15,7 @@ import java.sql.SQLException;
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/profile");
             return;
