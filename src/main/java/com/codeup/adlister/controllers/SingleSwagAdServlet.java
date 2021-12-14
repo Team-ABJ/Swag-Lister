@@ -3,6 +3,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,16 +26,33 @@ public class SingleSwagAdServlet extends HttpServlet {
 
 
         request.getRequestDispatcher("/WEB-INF/singleSwagAdPage.jsp").forward(request, response);
-  if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/singleSwagAd");
             return;
         }
-//        if (request.getSession().getAttribute("user") != null) {
-//            response.sendRedirect("/singleSwagAd");
-//            return;
-//        }
-//        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+    }
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+//        String redirect = request.getParameter("redirect");
+        User user = DaoFactory.getUsersDao().findByUsername(username);
+
+        if (user == null) {
+            response.sendRedirect("/singleSwagAd");
+            return;
+        }
+
+        boolean validAttempt = BCrypt.checkpw(password, user.getPassword());
+
+        if (validAttempt) {
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("/singleSwagAd");
+
+        } else {
+            response.sendRedirect("/singleSwagAd");
+
+        }
     }
 }
 
