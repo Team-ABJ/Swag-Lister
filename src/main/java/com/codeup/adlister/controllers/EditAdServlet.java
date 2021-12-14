@@ -19,6 +19,7 @@ public class EditAdServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
         String id = request.getPathInfo().substring(1);
 
         Long AdId = Long.valueOf(id);
