@@ -4,21 +4,28 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
+    <style>
+        body{
+            background-image: url("../img/1.jpg");
+            /*background-size: cover;*/
+            color: orangered;
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
-            <div class="form-group">
+            <div class="form-group col-5">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
-            <div class="form-group">
+            <div class="form-group col-5">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In/Register">
+            <input type="submit" class="btn btn-primary btn-block col-4" value="Log In/Register">
         </form>
     </div>
 </body>
