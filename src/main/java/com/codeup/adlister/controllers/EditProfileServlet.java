@@ -14,6 +14,7 @@ import java.sql.SQLException;
     @WebServlet(name = "controllers.EditProfileServlet", urlPatterns = "/EditProfile")
     public class EditProfileServlet extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
             Long userId = Long.valueOf(request.getParameter("id"));
             System.out.println(userId);
 

@@ -21,10 +21,11 @@
             background-image: url("../img/Green-cream.png");
         }
     </style>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
 </head>
 
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
+<body>
 <%--<div class="container">--%>
 <%--    <div class="col-md-6">--%>
 

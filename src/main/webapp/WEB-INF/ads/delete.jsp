@@ -12,10 +12,16 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+    <style>
+        body{
+            background-image: url("../../img/Delete_ad.gif");
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <%--<h1 style="color: red;">Your ad has been deleted!</h1>--%>
+
 <%--<a href="/profile">Return to Profile</a>--%>
 <div class="container col-7">
     <h1>Delete Swag</h1>
@@ -39,6 +45,7 @@
         <input type="hidden" value="${swagId}" name="swagId">
         <a href="/profile" type="rest" class="btn btn-block btn-danger">Delete</a>
         <a href="/profile" type="rest" class="btn btn-block btn-primary">Cancel</a>
+
 
     </form>
 </div>

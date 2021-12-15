@@ -29,6 +29,7 @@ import java.util.jar.Attributes;
 
 public class SearchAdsResultsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("validAttempt", (User) request.getSession().getAttribute("user") != null);
         List<Ad> ads = (List<Ad>) request.getSession().getAttribute("ads");
         request.setAttribute("ads", ads);
         request.getRequestDispatcher("/WEB-INF/searchAdsResults.jsp").forward(request,response);

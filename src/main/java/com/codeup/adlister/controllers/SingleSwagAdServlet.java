@@ -33,32 +33,19 @@ public class SingleSwagAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-//        String redirect = request.getParameter("redirect");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
-
-        if (user == null) {
-            response.sendRedirect("/singleSwagAd");
-            return;
-        }
-
-        boolean validAttempt = BCrypt.checkpw(password, user.getPassword());
-
-        if (validAttempt) {
-            request.getSession().setAttribute("user", user);
-            response.sendRedirect("/singleSwagAd");
-
-        } else {
-            response.sendRedirect("/singleSwagAd");
-
-        }
     }
 }
 
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//
+//
+//
+//
+//
+//
+//
 //        String username = request.getParameter("username");
 //        String password = request.getParameter("password");
+////        String redirect = request.getParameter("redirect");
 //        User user = DaoFactory.getUsersDao().findByUsername(username);
 //
 //        if (user == null) {
@@ -66,16 +53,19 @@ public class SingleSwagAdServlet extends HttpServlet {
 //            return;
 //        }
 //
-////        boolean validAttempt = Password.check(password, user.getPassword());
-//        boolean validAttempt = true;
+//        boolean validAttempt = BCrypt.checkpw(password, user.getPassword());
+//
 //        if (validAttempt) {
 //            request.getSession().setAttribute("user", user);
 //            response.sendRedirect("/singleSwagAd");
+//
 //        } else {
 //            response.sendRedirect("/singleSwagAd");
+//
 //        }
 //    }
-//}
+
+
 
 
 
