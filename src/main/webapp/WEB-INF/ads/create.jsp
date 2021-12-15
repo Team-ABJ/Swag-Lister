@@ -28,12 +28,13 @@
             <textarea id="description" name="description" class="form-control" type="text"></textarea>
         </div>
         <div class="form-group">
-            <label for="categoryFormControlSelect">Category</label>
-            <select id="categoryFormControlSelect" name="category" class="form-control">
-                <option>Accessories</option>
-                <option>Shoes</option>
-                <option>Shirts</option>
-                <option>Pants</option>
+            <label for="category">Category</label>
+            <select id="category" name="category" class="form-control">
+                <option disabled selected>Please Choose One:</option>
+                <option>accessories</option>
+                <option>shoes</option>
+                <option>shirts</option>
+                <option>pants</option>
             </select>
         </div>
         <div class="form-group">

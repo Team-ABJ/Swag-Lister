@@ -11,6 +11,12 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/ads/create">Create Ad</a></li>
+
 <%--This checks if--%>
         <c:choose>
             <c:when test="${validAttempt}">

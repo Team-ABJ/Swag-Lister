@@ -33,7 +33,7 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block col-4" value="Log In">
+            <input type="submit" class="btn btn-primary btn-block col-5" value="Log In">
             <br>
             <p>New User?  <a href="/register">Register Here</a></p>
         </form>
