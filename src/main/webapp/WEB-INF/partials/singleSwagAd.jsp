@@ -56,9 +56,8 @@
                         </p>
                         <div class="collapse" id="collapseExample">
                             <div class="card card-body">
-                                You need to be a
-                                <a href="/login">Registered or Login </a>
-
+                                You must be
+                                <a href="/login">Registered or Logged In </a>
                                 to get your swag on
                             </div>
                         </div>
