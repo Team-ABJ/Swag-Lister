@@ -18,17 +18,17 @@
             <li><a href="/ads/create">Create Ad</a></li>
 
 <%--This checks if--%>
-        <c:choose>
-            <c:when test="${validAttempt}">
-                <h1>Hello, ${sessionScope.user.username}!</h1>
-                <li><a href="/profile">Return to Profile</a></li>
-                <li><a href="/ads/create">Create Ad</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </c:when>
-            <c:otherwise>
-                <li><a href="/login">Login</a></li>
-            </c:otherwise>
-        </c:choose>
+<%--        <c:choose>--%>
+<%--            <c:when test="${validAttempt}">--%>
+<%--                <h1>Hello, ${sessionScope.user.username}!</h1>--%>
+<%--                <li><a href="/profile">Return to Profile</a></li>--%>
+<%--                <li><a href="/ads/create">Create Ad</a></li>--%>
+<%--                <li><a href="/logout">Logout</a></li>--%>
+<%--            </c:when>--%>
+<%--            <c:otherwise>--%>
+<%--                <li><a href="/login">Login</a></li>--%>
+<%--            </c:otherwise>--%>
+<%--        </c:choose>--%>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

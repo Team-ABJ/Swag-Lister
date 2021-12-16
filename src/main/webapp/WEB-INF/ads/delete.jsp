@@ -23,7 +23,7 @@
 <%--<h1 style="color: red;">Your ad has been deleted!</h1>--%>
 
 <%--<a href="/profile">Return to Profile</a>--%>
-<div class="container col-7">
+<div class="container col-4">
     <h1>Delete Swag</h1>
     <form action="/ads/delete/?id=${ads.id}" method="post">
         <div class="form-group">

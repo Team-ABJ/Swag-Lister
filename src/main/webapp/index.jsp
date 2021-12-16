@@ -7,10 +7,18 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
+    <style>
+        h1{
+            font-family: cursive;
+            font-size: 100px;
+            margin-left: -70px;
+
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+        <h1>Welcome to Swaglister!</h1>
     </div>
 </body>
 </html>
